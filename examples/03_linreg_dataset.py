@@ -33,8 +33,8 @@ b = tf.get_variable('bias', initializer=tf.constant(0.0))
 Y_predicted = X * w + b
 
 # Step 5: use the square error as the loss function
-loss = tf.square(Y - Y_predicted, name='loss')
-# loss = utils.huber_loss(Y, Y_predicted)
+#loss = tf.square(Y - Y_predicted, name='loss')
+loss = utils.huber_loss(Y, Y_predicted)
 
 # Step 6: using gradient descent with learning rate of 0.001 to minimize loss
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.001).minimize(loss)
@@ -66,9 +66,9 @@ with tf.Session() as sess:
     print('w: %f, b: %f' %(w_out, b_out))
 print('Took: %f seconds' %(time.time() - start))
 
-# plot the results
-plt.plot(data[:,0], data[:,1], 'bo', label='Real data')
-plt.plot(data[:,0], data[:,0] * w_out + b_out, 'r', label='Predicted data with squared error')
-# plt.plot(data[:,0], data[:,0] * (-5.883589) + 85.124306, 'g', label='Predicted data with Huber loss')
-plt.legend()
-plt.show()
+## plot the results
+#plt.plot(data[:,0], data[:,1], 'bo', label='Real data')
+#plt.plot(data[:,0], data[:,0] * w_out + b_out, 'r', label='Predicted data with squared error')
+## plt.plot(data[:,0], data[:,0] * (-5.883589) + 85.124306, 'g', label='Predicted data with Huber loss')
+#plt.legend()
+#plt.show()

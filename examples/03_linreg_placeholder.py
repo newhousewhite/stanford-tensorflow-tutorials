@@ -62,8 +62,8 @@ with tf.Session() as sess:
 
 print('Took: %f seconds' %(time.time() - start))
 
-# plot the results
-plt.plot(data[:,0], data[:,1], 'bo', label='Real data')
-plt.plot(data[:,0], data[:,0] * w_out + b_out, 'r', label='Predicted data')
-plt.legend()
-plt.show()
+## plot the results
+#plt.plot(data[:,0], data[:,1], 'bo', label='Real data')
+#plt.plot(data[:,0], data[:,0] * w_out + b_out, 'r', label='Predicted data')
+#plt.legend()
+#plt.show()
